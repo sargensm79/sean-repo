@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <style>
+        body {
+            font-family: BrandonGrotesque-Regular, Helvetica Neue, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            margin: 0;
+        }
+        .full {
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 5px;
+        }
+        .header-container {
+            position: relative;
+            height: auto;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right top;
+        }
+        .title {
+            padding: 20px 25px 5px 25px;
+            font-size: 1.5em;
+            text-transform: uppercase;
+        }
+        .body-container {
+            position: absolute;
+            min-height: 55vh;
+        }
+        .misc-info {
+            padding: 5px 25px 5px 25px;
+        }
+        .more {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .line {
+            border-bottom: 1px solid #000000;
+            margin: 15px 25px 0px 25px;
+            width: 80px;
+        }
+        .desc {
+            padding: 10px 25px 10px 25px;
+            line-height: 1.4em;
+        }
+        button {
+            display: inline-block;
+            text-align: center;
+            height: 32px;
+            width: 100%;
+            text-transform: uppercase;
+            border: 1px solid #222;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background-color: #000;
+            cursor: pointer;
+        }
+        
+        button::after {
+            content: "Enter To Win";
+        }
+        
+        button.done {
+            color: #000;
+            background-color: #fff;
+            cursor: default;
+        }
+        
+        button.done::after {
+            content: "You've Been Entered";
+        }
+        
+        a {
+            color: #030c83;
+        }
+        p {
+            margin: 10px 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="body-container">
+</div>
+    <div class="full">
+        <button></button>
+    </div>
+<script>
+    var submitButton = document.querySelector('button');
+
+    submitButton.addEventListener('click', function(evt) {
+        evt.preventDefault();
+        submitButton.classList.add('done');
+        submitButton.removeEventListener('click');
+    });
+</script>
+</body>
+</html>
